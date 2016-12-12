@@ -5,6 +5,11 @@ public class CameraRotation : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        print("Parent Transform");
+        print(transform);
+        print("Camera Transform");
+        Camera camera = GetComponentInChildren<Camera>();
+        print(camera.transform);
         	
 	}
 	
@@ -15,7 +20,7 @@ public class CameraRotation : MonoBehaviour {
         float mouseX = Input.GetAxis("Mouse X") * rotationSpeed;
         float mouseY = Input.GetAxis("Mouse Y") * rotationSpeed;
 
-        transform.rotation = Quaternion.Euler(mouseY, mouseX, 0) * transform.rotation;        
+        transform.rotation = Quaternion.Euler(mouseY, mouseX, 0) * transform.rotation;
              
     }
 }
