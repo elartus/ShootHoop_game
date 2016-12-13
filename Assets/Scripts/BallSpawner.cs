@@ -12,7 +12,8 @@ public class BallSpawner : MonoBehaviour {
 		
 	void Update () {
 
-        float speed = 5.0f;
+       float speed = 5.0f;
+
        if (Input.GetKeyDown(KeyCode.LeftArrow)) {
             GameObject instance = Instantiate(ballPrefab);
             Rigidbody rb =  instance.GetComponent<Rigidbody>();
@@ -24,9 +25,10 @@ public class BallSpawner : MonoBehaviour {
             Rigidbody rb = instance.GetComponent<Rigidbody>();
             rb.velocity = Vector3.right * speed;
         }
-        else if (Input.GetKeyDown(KeyCode.UpArrow))
+        else if (Input.GetButtonDown("Fire1"))
         {
             GameObject instance = Instantiate(ballPrefab);
+            instance.transform.position = transform.position;
             Rigidbody rb = instance.GetComponent<Rigidbody>();
             rb.velocity = Vector3.forward * speed;
         }
